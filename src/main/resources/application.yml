@@ -26,7 +26,8 @@ spring:
             client-id: c66636a31470903c5b81583fd668cc83
             client-authentication-method: post
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8080/api/auth/kakao/callback
+            redirect-uri: "{baseUrl}/login/oauth2/code/kakao"
+
             scope:
               - profile_nickname
               - account_email
@@ -37,7 +38,7 @@ spring:
             client-id: Yyk_DtmmodG0yDk4EYJ3
             client-secret: EBn3dhzgz1
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8080/api/auth/naver/callback
+            redirect-uri: "{baseUrl}/login/oauth2/code/naver"
             scope:
               - name
               - email
@@ -48,7 +49,7 @@ spring:
             client-id: 567034279915-k6evihs4g4b3ggksiohl2nknrg7ea7cm.apps.googleusercontent.com
             client-secret: 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
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8080/api/auth/google/callback
+            redirect-uri: "{baseUrl}/login/oauth2/code/google"
             scope:
               - profile
               - email
