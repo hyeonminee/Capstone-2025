@@ -5,7 +5,7 @@ services:
     container_name: deepread-mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: 1103
       MYSQL_DATABASE: deepread
       MYSQL_USER: user
       MYSQL_PASSWORD: password
@@ -14,7 +14,7 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot" ]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p1103" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -29,8 +29,8 @@ services:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/deepread
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1103
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       JWT_SECRET: 29bca18d500a5f5d21c23490e7d45dcbe9fa531ec120ae129972144c1f5ffc8f
       JWT_ACCESS_TOKEN_EXPIRATION: 360000
